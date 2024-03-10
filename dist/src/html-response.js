@@ -66,6 +66,10 @@ class HtmlResponse {
         });
         return this;
     }
+    hxReplaceUrl(url = "false") {
+        this.addHeader({ "HX-Replace-Url": url });
+        return this;
+    }
 }
 exports.HtmlResponse = HtmlResponse;
 //# sourceMappingURL=html-response.js.map

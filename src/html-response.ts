@@ -99,4 +99,9 @@ export class HtmlResponse {
     });
     return this;
   }
+
+  hxReplaceUrl(url = "false") {
+    this.addHeader({ "HX-Replace-Url": url });
+    return this;
+  }
 }

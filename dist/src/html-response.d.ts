@@ -24,5 +24,6 @@ export declare class HtmlResponse {
     hxReSwap(option?: ReSwapOptions): this;
     hxNoBrowserHistoryPush(): this;
     hxTrigger(eventObj: Record<string, any>): this;
+    hxReplaceUrl(url?: string): this;
 }
 export {};
