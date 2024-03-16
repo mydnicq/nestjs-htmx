@@ -15,6 +15,7 @@ interface CookieOptions {
     httpOnly?: boolean;
     secure?: boolean;
     sameSite?: "strict" | "lax" | "none";
+    expires?: Date;
 }
 export declare class Redirect {
     private __redirectOpts;

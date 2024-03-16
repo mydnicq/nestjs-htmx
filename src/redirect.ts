@@ -25,6 +25,7 @@ interface CookieOptions {
   httpOnly?: boolean;
   secure?: boolean;
   sameSite?: "strict" | "lax" | "none";
+  expires?: Date;
 }
 
 export class Redirect {
@@ -83,6 +84,10 @@ export class Redirect {
 
     if (cookieOpts.sameSite) {
       cookie = cookie + ` SameSite=${cookieOpts.sameSite};`;
+    }
+
+    if (cookieOpts.expires) {
+      cookie = cookie + ` Expires=${cookieOpts.expires.toUTCString()};`;
     }
 
     this.__headers.push({ "Set-Cookie": cookie });

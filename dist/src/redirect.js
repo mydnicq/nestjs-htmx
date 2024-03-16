@@ -44,6 +44,9 @@ class Redirect {
         if (cookieOpts.sameSite) {
             cookie = cookie + ` SameSite=${cookieOpts.sameSite};`;
         }
+        if (cookieOpts.expires) {
+            cookie = cookie + ` Expires=${cookieOpts.expires.toUTCString()};`;
+        }
         this.__headers.push({ "Set-Cookie": cookie });
         return this;
     }
